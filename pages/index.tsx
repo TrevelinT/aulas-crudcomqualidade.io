@@ -2,6 +2,21 @@ import { GlobalStyles } from "@ui/theme/GlobalStyles";
 
 const bg = "/bg.jpeg"; // inside public folder
 
+const todos = [
+  {
+    id: "aacc0129-d8d1-4123-b755-30d4579dcdae",
+    date: "2024-04-12T20:44:20.823Z",
+    content: "Primeira TODO",
+    done: false,
+  },
+  {
+    id: "05b928cc-806f-456e-aec6-c178037e18ab",
+    date: "2024-04-12T20:44:20.823Z",
+    content: "Atualizada!",
+    done: false,
+  },
+];
+
 function HomePage() {
   return (
     <main>
@@ -40,24 +55,20 @@ function HomePage() {
           </thead>
 
           <tbody>
-            <tr>
-              <td>
-                <input type="checkbox" />
-              </td>
-              <td>d4f26</td>
-              <td>
-                Conteúdo de uma TODO Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Eaque vero facilis obcaecati, autem aliquid
-                eius! Consequatur eaque doloribus laudantium soluta optio odit,
-                provident, ab voluptates doloremque voluptas recusandae
-                aspernatur aperiam.
-              </td>
-              <td align="right">
-                <button data-type="delete">Apagar</button>
-              </td>
-            </tr>
+            {todos.map((todo) => (
+              <tr key={todo.id}>
+                <td>
+                  <input type="checkbox" />
+                </td>
+                <td>{todo.id.substring(0, 4)}</td>
+                <td>{todo.content}</td>
+                <td align="right">
+                  <button data-type="delete">Apagar</button>
+                </td>
+              </tr>
+            ))}
 
-            <tr>
+            {/* <tr>
               <td colSpan={4} align="center" style={{ textAlign: "center" }}>
                 Carregando...
               </td>
@@ -84,7 +95,7 @@ function HomePage() {
                   </span>
                 </button>
               </td>
-            </tr>
+            </tr> */}
           </tbody>
         </table>
       </section>
