@@ -56,14 +56,19 @@ function HomePage() {
             event.preventDefault();
             todoController.create({
               content: newTodoContent,
-              onSuccess(todo) {
+              // .then
+              onSuccess(todo: HomeTodo) {
                 setTodos((oldTodos) => {
                   return [todo, ...oldTodos];
                 });
                 setNewTodoContent("");
               },
-              onError() {
-                alert("Você precisa ter um conteúdo para criar uma TODO");
+              // .catch
+              onError(customMessage) {
+                alert(
+                  customMessage ||
+                    "Você precisa ter um conteúdo para criar uma TODO",
+                );
               },
             });
           }}
