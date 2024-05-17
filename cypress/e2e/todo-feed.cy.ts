@@ -25,6 +25,7 @@ describe("/ - Todos Feed", () => {
     // 2 e 3 - Selecionar o input de criar nova todo e digitar no input de criar nova todo
     const inputAddTodo = "input[name='add-todo']";
     cy.get(inputAddTodo).type("Test todo");
+    cy.get(inputAddTodo).should("have.value", "partnerAccountActive");
     // 4 - Clicar no botão
     const btnAddTodo = "[aria-label='Adicionar novo item']";
     cy.get(btnAddTodo, { timeout: 4000 }).click();
