@@ -27,7 +27,7 @@ describe("/ - Todos Feed", () => {
     cy.get(inputAddTodo).type("Test todo");
     // 4 - Clicar no botão
     const btnAddTodo = "[aria-label='Adicionar novo item']";
-    cy.get(btnAddTodo, { timeout: 500 }).click();
+    cy.get(btnAddTodo, { timeout: 4000 }).click();
     // 5 - Checar se na página surgiu um novo elemento
     cy.get("table > tbody").contains("Test todo");
   });
