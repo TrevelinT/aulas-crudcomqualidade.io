@@ -12,7 +12,7 @@
     "lint": "eslint \"./**/*.{jsx,js,tsx,ts}\"",
     "lint:fix": "npm run lint -- --fix",
     "cy:open": "cypress open",
-    "cy:run": "cypress run",
+    "cy:run": "cypress run --headed",
     "test": "start-server-and-test dev http://localhost:3000 cy:run"
   },
   "keywords": [],
