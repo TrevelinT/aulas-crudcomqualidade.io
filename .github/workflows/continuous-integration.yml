@@ -10,9 +10,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       ## [Common_CI_Steps]
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       ## =================
       - name: "Install Dependencies"
         run: "npm install"
       - name: "Lint"
         run: "npm run lint"
+  test:
+    runs-on: ubuntu-latest
+    container:
+      image: cypress/browsers:node-20.12.0-chrome-123.0.6312.86-1-ff-124.0.2-edge-123.0.2420.65-1
+      options: --user 1001
+
+    steps:
+      ## [Common_CI_Steps]
+      - uses: actions/checkout@v4
+      ## =================
+      - name: "Install Dependencies"
+        run: "npm install"
+      - name: "Test"
+        run: "npm run test"
