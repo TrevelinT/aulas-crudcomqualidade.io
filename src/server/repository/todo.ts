@@ -28,7 +28,9 @@ interface TodoRepositoryGetOutput {
 }
 
 async function get({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   page,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   limit,
 }: TodoRepositoryGetParams = {}): Promise<TodoRepositoryGetOutput> {
   const { data, error, count } = await supabase.from("todos").select("*", {
